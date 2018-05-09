@@ -1,13 +1,10 @@
-package com.cspassos.helpdesk.impl;
-
-import java.util.Optional;
+package com.cspassos.helpdesk.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import com.cspassos.helpdesk.entity.User;
 import com.cspassos.helpdesk.repository.UserRepository;
