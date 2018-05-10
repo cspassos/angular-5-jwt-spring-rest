@@ -34,7 +34,8 @@ public class UserController {
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
-	  
+	
+	//Adicionar um usuario novo
 	@PostMapping
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<Response<User>> create(HttpServletRequest request, @RequestBody User user, 
@@ -68,6 +69,7 @@ public class UserController {
 		}
 	}
 	
+	//Alterar Usuario
 	@PutMapping
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<Response<User>> update(HttpServletRequest request, @RequestBody User user, BindingResult result){
@@ -102,7 +104,8 @@ public class UserController {
 		}
 	}
 	
-	@GetMapping(value = {"id"})
+	//Pesquisa por id
+	@GetMapping(value = "/{id}")
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<Response<User>> findById(@PathVariable("id") String id){
 		Response<User> response = new Response<User>();
@@ -115,7 +118,8 @@ public class UserController {
 		return ResponseEntity.ok(response);
 	}
 	
-	@DeleteMapping(value = {"id"})
+	//Deletar usuario
+	@DeleteMapping(value = "/{id}")
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<Response<String>> delete(@PathVariable("id") String id){
 		Response<String> response = new Response<String>();
@@ -128,7 +132,9 @@ public class UserController {
 		return ResponseEntity.ok(new Response<String>());
 	}
 	
-	@GetMapping(value = {"id"})
+	//Pesquisar todos usuarios
+	//page = em qual a pagina; / count = quantos registros quero que apareça
+	@GetMapping(value = "{page}/{count}")
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<Response<Page<User>>> findAll(@PathVariable int page, @PathVariable int count){
 		Response<Page<User>> response = new Response<Page<User>>();
