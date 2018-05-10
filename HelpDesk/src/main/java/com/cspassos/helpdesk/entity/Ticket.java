@@ -26,7 +26,7 @@ public class Ticket {
 	
 	private Integer number;
 	
-	//vai ser quando um tecnico aceitar esses usuario o tecnico vai ser atribuido a ele
+	//Quando um tecnico aceitar esses usuario o tecnico vai ser atribuido a ele
 	@DBRef(lazy = true)
 	private User assingnedUser;
 
