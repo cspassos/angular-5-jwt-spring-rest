@@ -1,6 +1,7 @@
 package com.cspassos.helpdesk.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -24,7 +25,7 @@ public class TicketServiceImpl implements TicketService {
 	public Ticket createOrUpdate(Ticket ticket) {
 		return this.ticketRepository.save(ticket);
 	}
-
+	
 	public Ticket findById(String id) {
 		return this.ticketRepository.findOne(id);
 	}
