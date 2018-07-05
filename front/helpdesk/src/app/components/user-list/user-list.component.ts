@@ -63,9 +63,32 @@ export class UserListComponent implements OnInit {
               this.showMessage({
               type: 'error',
               text: err['error']['errors'][0]
-          })
+          });
+          });
         }
-      })
+      });
+  }
+
+  setNextPage(event:any){
+    event.preventDefault();
+    if(this.page+1 < this.pages.length){
+      this.page = this.page + 1;
+      this.findAll(this.page, this.count);
+    }
+  }
+
+  setPreviousPage(event:any){
+    event.preventDefault();
+    if(this.page > 0){
+      this.page = this.page - 1;
+      this.findAll(this.page, this.count);
+    }
+  }
+
+  setPage(i, event:any){
+    event.preventDefault();
+      this.page = i;
+      this.findAll(this.page, this.count);
   }
 
   private showMessage(message: {type: string, text: string}) : void {
