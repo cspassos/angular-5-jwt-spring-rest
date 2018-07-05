@@ -11,6 +11,7 @@ export const ROUTES: Routes = [
     { path : '', component: HomeComponent, canActivate: [AuthGuard]}, //rota inicial
     { path : 'login', component: LoginComponent },
     { path : 'user-new', component: UserNewComponent, canActivate: [AuthGuard]},
+    { path : 'user-new/:id', component: UserNewComponent, canActivate: [AuthGuard]},
     { path : 'user-list', component: UserListComponent, canActivate: [AuthGuard]}
 ]
 

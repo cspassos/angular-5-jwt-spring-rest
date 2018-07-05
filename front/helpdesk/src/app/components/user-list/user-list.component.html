@@ -10,7 +10,6 @@
       <div class="box-body">
         <table class="table table-bordered">
           <tr>
-            <th style="width: 10px">#</th>
             <th>Email</th>
             <th>Profile</th>
             <th style="width: 10px">&nbsp;</th>
@@ -20,7 +19,7 @@
             <td>{{user.email}}</td>
             <td>{{user.profile}}</td>
             <td><button class="btn btn-primary" (click)="edit(user.id)">Edit</button></td>
-            <td><button class="btn btn-primary" (click)="delete(user.id)">Delete</button></td>
+            <td><button class="btn btn-danger" (click)="delete(user.id)">Delete</button></td>
           </tr>
         </table>
       </div>
