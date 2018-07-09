@@ -8,6 +8,7 @@ export class Ticket {
         public status: string,
         public priority: string,
         public imagem: string,
+        public user: User,
         public assingnedUser: User,
         public data: string,
         public changes: Array<string>
